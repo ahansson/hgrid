@@ -1,6 +1,6 @@
 {
   "name": "hgrid-css",
-  "version": "1.0.0",
+  "version": "2.0.0-alpha",
   "description": "A Lightweight and Practical CSS Utility Kit.",
   "main": "sass/hgrid.scss",
   "style": "dist/hgrid.min.css",
