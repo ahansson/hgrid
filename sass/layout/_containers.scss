@@ -43,12 +43,12 @@
 
 .row,
 .row-block {
+  display: flex;
+  margin-bottom: $column-gutter-width;
   @include mixin.row-margins;
   @include mixin.viewport($stack-point) {
     display: block;
   }
-  display: flex;
-  margin-bottom: $column-gutter-width;
 }
 
 // For full width block elements without columns

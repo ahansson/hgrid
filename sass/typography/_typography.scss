@@ -2,12 +2,12 @@
 @use '../mixins/mixins' as mixin;
 
 body {
+  font-size: ($font-size * 1.175);
+  line-height: ($font-size * 1.8);
   @include mixin.viewport(phone) {
     font-size: ($font-size * 1.1);
     line-height: ($font-size * 1.6);
   }
-  font-size: ($font-size * 1.175);
-  line-height: ($font-size * 1.8);
 }
 
 // Headings
@@ -47,15 +47,14 @@ article ul,
 article ol,
 section ul,
 section ol {
-  @include mixin.viewport(phone) {
-    padding-left: 10%;
-  }
   list-style-type: square;
   padding-left: 5%;
   margin: 2rem 0;
-
-  & li {
+  li {
     margin: 1.4rem 0;
+  }
+  @include mixin.viewport(phone) {
+    padding-left: 10%;
   }
 }
 

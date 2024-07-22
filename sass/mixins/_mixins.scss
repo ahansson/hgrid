@@ -54,14 +54,14 @@
   $line, 
   $margin-bottom
 ) {
+  font-size: ($font-size * $size);
+  line-height: ($font-size * $line);
+  margin-bottom: ($font-size * $margin-bottom);
   @include viewport(tablet-portrait) {
     font-size: ($font-size * $small-size);
     line-height: ($font-size * $small-line);
     margin-bottom: ($font-size * $small-mb);
   }
-  font-size: ($font-size * $size);
-  line-height: ($font-size * $line);
-  margin-bottom: ($font-size * $margin-bottom);
 }
 
 // Text Columns

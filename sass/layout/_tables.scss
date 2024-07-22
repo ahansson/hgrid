@@ -1,7 +1,7 @@
 @use '../variables/variables' as *;
 
 // Scroll table (horizontally)
-// Apply to a parent container 
+// Apply to a parent container
 // of a table with a fixed width/min-width
 .scrollable-x {
   overflow-y: hidden;
@@ -28,28 +28,28 @@ table {
   }
 
   thead tr {
-  text-align: left;
-  border-bottom: 2px solid #e2c5a9;
+    text-align: left;
+    border-bottom: 2px solid #e2c5a9;
   }
 
   thead tr th,
   tbody tr td {
-  border-bottom: 1px solid $bg-gray-light;;
-  padding: 0.6rem 1rem;
+    border-bottom: 1px solid $bg-gray-light;
+    padding: 0.6rem 1rem;
   }
 
   thead tr th {
-  font-weight: bold;
-  padding: 0.4rem 1rem;
+    font-weight: bold;
+    padding: 0.4rem 1rem;
   }
 
   tfoot tr td {
     font-size: 80%;
-    background: $bg-gray-light;;
+    background: $bg-gray-light;
     line-height: 1.6rem;
     padding: 0.2rem 1rem;
   }
-  
+
   &.layout-fixed {
     table-layout: fixed;
   }
@@ -64,7 +64,7 @@ table {
 
       td {
         border-bottom: none;
-        padding: 0.6rem 1rem 0.5rem 1rem; 
+        padding: 0.6rem 1rem 0.5rem 1rem;
       }
 
       &:nth-child(even) {
@@ -79,7 +79,7 @@ table {
 
       &:nth-child(odd) {
         border-bottom: 1px solid transparent;
-        
+
         &:hover {
           background: #f5f0e3;
           border-bottom: 1px dotted $bg-gray-light;
