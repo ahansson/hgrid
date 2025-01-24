@@ -1392,16 +1392,11 @@ input[type=reset]:not(.block, .display-block):last-child {
 }
 
 .row-block {
+  display: block;
   margin-left: 0;
   margin-right: 0;
-  display: block;
 }
 
-@media (max-width: 768px) {
-  .row.custom-stack {
-    display: flex;
-  }
-}
 @media (max-width: 600px) {
   .row.custom-stack {
     display: block;
@@ -1410,6 +1405,11 @@ input[type=reset]:not(.block, .display-block):last-child {
   .row.custom-stack [class^=column-] {
     margin-bottom: 1.6%;
     width: 98.4%;
+  }
+}
+@media (max-width: 768px) {
+  .row.custom-stack {
+    display: flex;
   }
 }
 

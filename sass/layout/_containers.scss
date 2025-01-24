@@ -53,19 +53,13 @@
 
 // For full width block elements without columns
 .row-block {
-  @include mixin.row-block-padding;
   display: block;
+  @include mixin.row-block-padding;
 }
 
 // Alternative viewport width
 // where column stacking kicks in
 .row.custom-stack {
-
-  @if $stack-point > $custom-stack-point {
-    @include mixin.viewport($stack-point) {
-      display: flex;
-    }
-  }
 
   @include mixin.viewport($custom-stack-point) {
     display: block;
@@ -76,6 +70,13 @@
       width: (100% - $column-gutter-width);
     }
   }
+
+  @if $stack-point > $custom-stack-point {
+    @include mixin.viewport($stack-point) {
+      display: flex;
+    }
+  }
+
 
 }
 

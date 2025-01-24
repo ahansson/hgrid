@@ -121,23 +121,18 @@
 // ('phone' and 'desktop-large' excluded, they are already "specific")
 @mixin onlyViewport($viewport) { 
   @if $viewport == 'phone-landscape' {
-    $min-width: $phone + 1px;
-    @media (min-width: #{$min-width}) and (max-width: #{$phone-landscape}) { @content };
+    @media (min-width: ($phone + 1px)) and (max-width: $phone-landscape) { @content };
   }
   @if $viewport == 'tablet-portrait' {
-    $min-width: $phone-landscape + 1px;
-    @media (min-width: #{$min-width}) and (max-width: #{$tablet-portrait}) { @content };
+    @media (min-width: ($phone-landscape + 1px)) and (max-width: $tablet-portrait) { @content };
   }
   @if $viewport == 'tablet-landscape' {
-    $min-width: $tablet-portrait + 1px;
-    @media (min-width: #{$min-width}) and (max-width: #{$tablet-landscape}) { @content };
+    @media (min-width: ($tablet-portrait + 1px)) and (max-width: $tablet-landscape) { @content };
   }
   @if $viewport == 'laptop' {
-    $min-width: $tablet-landscape + 1px;
-    @media (min-width: #{$min-width}) and (max-width: #{$laptop}) { @content };
+    @media (min-width: ($tablet-landscape + 1px)) and (max-width: $laptop) { @content };
   }
   @if $viewport == 'desktop' {
-    $max-width: $desktop-large - 1px;
-    @media (min-width: #{$desktop}) and (max-width: #{$max-width}) { @content };
+    @media (min-width: $desktop) and (max-width: ($desktop-large - 1px)) { @content };
   }
 }

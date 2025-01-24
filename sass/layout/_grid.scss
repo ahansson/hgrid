@@ -3,7 +3,8 @@
 
 @use '../variables/variables' as *;
 @use '../mixins/mixins' as mixin;
-@use "sass:math";
+@use 'sass:math';
+@use 'sass:list';
 
 @if $include-grid {
 
@@ -100,18 +101,18 @@
   }
 
   // Gaps
-  @for $i from 1 through length($gaps) {
+  @for $i from 1 through list.length($gaps) {
 
     .gap-#{$i} {
-      gap: nth($gaps, $i);
+      gap: list.nth($gaps, $i);
     }
 
     .row-gap-#{$i} {
-      row-gap: nth($gaps, $i);
+      row-gap: list.nth($gaps, $i);
     }
 
     .column-gap-#{$i} {
-      column-gap: nth($gaps, $i);
+      column-gap: list.nth($gaps, $i);
     }
 
   }
@@ -190,18 +191,18 @@
           }
         }
 
-        @for $i from 1 through length($gaps) {
+        @for $i from 1 through list.length($gaps) {
 
           .gap-#{$i}-#{$bp} {
-            gap: nth($gaps, $i);
+            gap: list.nth($gaps, $i);
           }
 
           .row-gap-#{$i}-#{$bp} {
-            row-gap: nth($gaps, $i);
+            row-gap: list.nth($gaps, $i);
           }
 
           .column-gap-#{$i}-#{$bp} {
-            column-gap: nth($gaps, $i);
+            column-gap: list.nth($gaps, $i);
           }
 
         }
