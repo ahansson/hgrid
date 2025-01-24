@@ -54,14 +54,14 @@
   $line, 
   $margin-bottom
 ) {
+  font-size: ($font-size * $size);
+  line-height: ($font-size * $line);
+  margin-bottom: ($font-size * $margin-bottom);
   @include viewport(tablet-portrait) {
     font-size: ($font-size * $small-size);
     line-height: ($font-size * $small-line);
     margin-bottom: ($font-size * $small-mb);
   }
-  font-size: ($font-size * $size);
-  line-height: ($font-size * $line);
-  margin-bottom: ($font-size * $margin-bottom);
 }
 
 // Text Columns
@@ -121,18 +121,18 @@
 // ('phone' and 'desktop-large' excluded, they are already "specific")
 @mixin onlyViewport($viewport) { 
   @if $viewport == 'phone-landscape' {
-    @media (min-width: $phone + 1px) and (max-width: $phone-landscape) { @content };
+    @media (min-width: ($phone + 1px)) and (max-width: $phone-landscape) { @content };
   }
   @if $viewport == 'tablet-portrait' {
-    @media (min-width: $phone-landscape + 1px) and (max-width: $tablet-portrait) { @content };
+    @media (min-width: ($phone-landscape + 1px)) and (max-width: $tablet-portrait) { @content };
   }
   @if $viewport == 'tablet-landscape' {
-    @media (min-width: $tablet-portrait + 1px) and (max-width: $tablet-landscape) { @content };
+    @media (min-width: ($tablet-portrait + 1px)) and (max-width: $tablet-landscape) { @content };
   }
   @if $viewport == 'laptop' {
-    @media (min-width: $tablet-landscape + 1px) and (max-width: $laptop) { @content };
+    @media (min-width: ($tablet-landscape + 1px)) and (max-width: $laptop) { @content };
   }
   @if $viewport == 'desktop' {
-    @media (min-width: $desktop) and (max-width: $desktop-large - 1px) { @content };
+    @media (min-width: $desktop) and (max-width: ($desktop-large - 1px)) { @content };
   }
 }

@@ -1,13 +1,14 @@
 @use '../variables/variables' as *;
 @use '../mixins/mixins' as mixin;
+@use 'sass:list';
 
 body {
+  font-size: ($font-size * 1.175);
+  line-height: ($font-size * 1.8);
   @include mixin.viewport(phone) {
     font-size: ($font-size * 1.1);
     line-height: ($font-size * 1.6);
   }
-  font-size: ($font-size * 1.175);
-  line-height: ($font-size * 1.8);
 }
 
 // Headings
@@ -24,7 +25,7 @@ $title-attributes: (
 @each $title, $attr in $title-attributes {
   #{$title},
   .#{$title} {
-    @include mixin.title(nth($attr, 1), nth($attr, 2), nth($attr, 3), nth($attr, 4), nth($attr, 5), nth($attr, 6));
+    @include mixin.title(list.nth($attr, 1), list.nth($attr, 2), list.nth($attr, 3), list.nth($attr, 4), list.nth($attr, 5), list.nth($attr, 6));
   }
 }
 
@@ -47,15 +48,14 @@ article ul,
 article ol,
 section ul,
 section ol {
-  @include mixin.viewport(phone) {
-    padding-left: 10%;
-  }
   list-style-type: square;
   padding-left: 5%;
   margin: 2rem 0;
-
   & li {
     margin: 1.4rem 0;
+  }
+  @include mixin.viewport(phone) {
+    padding-left: 10%;
   }
 }
 
